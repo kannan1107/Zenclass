@@ -114,12 +114,12 @@ mentors
 
 ]);
 
-      #### codekata collection    =>  db.createCollection ("codekata")
-    #### attendance collection    =>  db.createCollection ("attendance")
-    #### topics collection    =>  db.createCollection ("topics")
-    #### tasks collection    =>  db.createCollection ("tasks")
-    #### company_drives collection    =>  db.createCollection ("company_drives")
-    #### mentors collection =>   db.createCollection ("mentors") 
+- codekata collection    =>  db.createCollection ("codekata")
+- attendance collection    =>  db.createCollection ("attendance")
+- topics collection    =>  db.createCollection ("topics")
+- tasks collection    =>  db.createCollection ("tasks")
+- company_drives collection    =>  db.createCollection ("company_drives")
+- mentors collection =>   db.createCollection ("mentors") 
  
 ### show the All Collection  => show collections
 ### show the All Database  => show dbs
@@ -550,5 +550,6 @@ db.attendance.aggregate([
     }
   }
 ]).pretty();
+
 
 
