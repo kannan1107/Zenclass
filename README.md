@@ -11,10 +11,11 @@ mentors
 
 ## Create the collection
 
-create the user collection => db.createCollection ("user")
- codekata collection    =>  db.createCollection ("codekata")
- attendance collection    =>  db.createCollection ("attendance")
- topics collection    =>  db.createCollection ("topics")
- tasks collection    =>  db.createCollection ("tasks")
- company_drives collection    =>  db.createCollection ("company_drives")
- mentors collection =>   db.createCollection ("mentors")
+-create the user collection => db.createCollection ("user")
+- codekata collection    =>  db.createCollection ("codekata")
+- attendance collection    =>  db.createCollection ("attendance")
+- topics collection    =>  db.createCollection ("topics")
+- tasks collection    =>  db.createCollection ("tasks")
+- company_drives collection    =>  db.createCollection ("company_drives")
+- mentors collection =>   db.createCollection ("mentors")
+
