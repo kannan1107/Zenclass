@@ -121,13 +121,13 @@ mentors
 - company_drives collection    =>  db.createCollection ("company_drives")
 - mentors collection =>   db.createCollection ("mentors") 
  
-### show the All Collection  => show collections
-### show the All Database  => show dbs
-### current DataBase  =>  db
-### show the users collection data => db.users.find().pretty();
+## show the All Collection  => show collections
+## show the All Database  => show dbs
+## current DataBase  =>  db
+## show the users collection data => db.users.find().pretty();
 
-#### insert the codekata collection data
-db.codekata.insertMany([
+## insert the codekata collection data
+- db.codekata.insertMany([
   {
     _id: ObjectId(),
     user_id: ObjectId("6929bff4c4e80b31e74e9efd"),
@@ -161,8 +161,8 @@ db.codekata.insertMany([
 ]);
 
 
-#### insert the attendance collection data
-db.attendance.insertMany([
+### insert the attendance collection data
+- db.attendance.insertMany([
   {
     _id: ObjectId(),
     user_id: ObjectId("6929bff4c4e80b31e74e9efd"),
@@ -196,10 +196,10 @@ db.attendance.insertMany([
 ]);
 
 
-### show the users collection data => db.attendance.find().pretty();
-### show the users collection data => db.codekata.find().pretty();
-#### insert the topics collection data
-db.topics.insertMany([
+## show the users collection data => db.attendance.find().pretty();
+## show the users collection data => db.codekata.find().pretty();
+## insert the topics collection data
+- db.topics.insertMany([
   {
     _id: ObjectId(),
     topic_name: "JavaScript Basics",
@@ -233,9 +233,9 @@ db.topics.insertMany([
 ]);
 
 
-### show the users collection data => db.topics.find().pretty();
-#### insert the tasks collection data
-db.tasks.insertMany([
+## show the users collection data => db.topics.find().pretty();
+## insert the tasks collection data 
+- db.tasks.insertMany([
   {
     _id: ObjectId(),
     user_id: ObjectId("6929bff4c4e80b31e74e9efd"),
@@ -274,9 +274,9 @@ db.tasks.insertMany([
 ]); 
 
 
-### show the users collection data => db.tasks.find().pretty();
-#### insert the company_drives collection data
-db.company_drives.insertMany([
+## show the users collection data => db.tasks.find().pretty();
+## insert the company_drives collection data
+- db.company_drives.insertMany([
   {
     _id: ObjectId(),
     company_name: "TechCorp",
@@ -305,9 +305,9 @@ db.company_drives.insertMany([
   }
 ]);
 
-### show the users collection data => db.company_drives.find().pretty();
-#### insert the mentors collection data
-db.mentors.insertMany([
+## show the users collection data => db.company_drives.find().pretty();
+## insert the mentors collection data
+- db.mentors.insertMany([
   {
     _id: ObjectId(),
     name: "kannan",
@@ -344,19 +344,19 @@ db.mentors.insertMany([
     assigned_batches: ["B42WD"]
     }
     ]);
-### show the users collection data => db.mentors.find().pretty();
+## show the users collection data => db.mentors.find().pretty();
 
 
-### Find all the topics and tasks which are thought in the month of October
-db.topics.find({ created_at: { $gte: ISODate("2023-10-01"), $lt: ISODate("2023-11-01") } }).pretty();
+## Find all the topics and tasks which are thought in the month of October
+- db.topics.find({ created_at: { $gte: ISODate("2023-10-01"), $lt: ISODate("2023-11-01") } }).pretty();
 
 
-db.tasks.find({ due_date: { $gte: ISODate("2023-10-01"), $lt: ISODate("2023-11-01") } }).pretty();
+- db.tasks.find({ due_date: { $gte: ISODate("2023-10-01"), $lt: ISODate("2023-11-01") } }).pretty();
 
-### Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
-db.company_drives.find({ drive_date: { $gte: ISODate("2020-10-15"), $lte: ISODate("2020-10-31") } }).pretty();
-### Find all the company drives and students who are appeared for the placement.
-db.company_drives.aggregate([
+## Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+- db.company_drives.find({ drive_date: { $gte: ISODate("2020-10-15"), $lte: ISODate("2020-10-31") } }).pretty();
+## Find all the company drives and students who are appeared for the placement.
+- db.company_drives.aggregate([
   {
     $lookup: {
       from: "users",
@@ -366,8 +366,8 @@ db.company_drives.aggregate([
     }
   }
 ]).pretty();
-### Find the number of problems solved by the user in codekata
-db.codekata.aggregate([
+## Find the number of problems solved by the user in codekata
+- db.codekata.aggregate([
   {
     $lookup: {
       from: "users",
@@ -387,8 +387,8 @@ db.codekata.aggregate([
     }
   }
 ]).pretty();
-### Find all the mentors with who has the mentee's count more than 15
-db.mentors.aggregate([
+## Find all the mentors with who has the mentee's count more than 15
+- db.mentors.aggregate([
   {
     $lookup: {
       from: "users",
@@ -416,8 +416,8 @@ db.mentors.aggregate([
     }
   }
 ]).pretty();
-### Find the number of users who are absent and present in the month of October
-db.attendance.aggregate([
+## Find the number of users who are absent and present in the month of October
+- db.attendance.aggregate([
   {
     $match: {
       date: { $gte: ISODate("2023-10-01"), $lt: ISODate("2023-11-01") }
@@ -430,8 +430,8 @@ db.attendance.aggregate([
     }
   }
 ]).pretty();
-### Find the number of tasks assigned to and completed by each user
-db.tasks.aggregate([
+## Find the number of tasks assigned to and completed by each user
+- db.tasks.aggregate([
   {
     $lookup: {
       from: "users",
@@ -463,8 +463,8 @@ db.tasks.aggregate([
     }
   }
 ]).pretty();
-### Find all the mentors who has the mentee's count more than 10 and sort them in descending order
-db.mentors.aggregate([
+## Find all the mentors who has the mentee's count more than 10 and sort them in descending order
+- db.mentors.aggregate([
   {
     $lookup: {
       from: "users",
@@ -497,12 +497,12 @@ db.mentors.aggregate([
     }
   }
 ]).pretty();
-### Find the topics and tasks which are thought in the month of October and sort them by date.
-db.topics.find({ created_at: { $gte: ISODate("2023-10-01"), $lt: ISODate("2023-11-01") } }).sort({ created_at: 1 }).pretty();
-db.tasks.find({ due_date: { $gte: ISODate("2023-10-01"), $lt: ISODate("2023-11-01") } }).sort({ due_date: 1 }).pretty();
+## Find the topics and tasks which are thought in the month of October and sort them by date.
+- db.topics.find({ created_at: { $gte: ISODate("2023-10-01"), $lt: ISODate("2023-11-01") } }).sort({ created_at: 1 }).pretty();
+- db.tasks.find({ due_date: { $gte: ISODate("2023-10-01"), $lt: ISODate("2023-11-01") } }).sort({ due_date: 1 }).pretty();
 
-### Find all the company drives and students who are appeared for the placement.
-db.company_drives.aggregate([
+## Find all the company drives and students who are appeared for the placement.
+- db.company_drives.aggregate([
   {
     $lookup: {
       from: "users",
@@ -513,8 +513,8 @@ db.company_drives.aggregate([
   }
 ]).pretty();
 
-### Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
-db.attendance.aggregate([
+## Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+- db.attendance.aggregate([
   {
     $match: {
       date: { $gte: ISODate("2020-10-15"), $lte: ISODate("2020-10-31") },
@@ -550,6 +550,7 @@ db.attendance.aggregate([
     }
   }
 ]).pretty();
+
 
 
 
